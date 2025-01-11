@@ -413,7 +413,8 @@ public class Rom extends DefaultMutableTreeNode implements Serializable  {
             }
         }
 
-        if (checksumTables.size() == 1) {
+        //Disable edit stamp completely by commenting out the following block
+        /*if (checksumTables.size() == 1) {
             final TableTreeNode checksum = checksumTables.get(0);
             int binDataPos = checksum.getTable().getStorageAddress() -
                              checksum.getTable().getRamOffset();
@@ -434,7 +435,7 @@ public class Rom extends DefaultMutableTreeNode implements Serializable  {
                     binDataPos + 204,
                     4);
             setEditStamp(binData, binDataPos);
-        }
+        }*/
 
         for (TableTreeNode checksum : checksumTables) {
             if (!checksum.getTable().isLocked()) {
